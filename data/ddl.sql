@@ -31,6 +31,12 @@ CREATE TABLE fixture (
 ALTER TABLE public.fixture
     ADD COLUMN match_result VARCHAR(250);
 
+ALTER TABLE public.fixture
+    ADD COLUMN match_status VARCHAR(250);
+
+ALTER TABLE public.fixture
+    ADD COLUMN match_summary VARCHAR(250);
+
 
 CREATE TABLE player (
    id INTEGER NOT NULL PRIMARY KEY,
