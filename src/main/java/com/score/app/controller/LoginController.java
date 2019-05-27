@@ -32,7 +32,12 @@ public class LoginController {
         Map<String,Object> user = new HashMap<>();
         if(!email.isEmpty() && !password.isEmpty()){
             user = userService.getUser(email, password);
-            return new ResponseEntity(user,HttpStatus.OK);
+            if(!user.isEmpty()){
+                return new ResponseEntity(user,HttpStatus.OK);
+            }else {
+                return new ResponseEntity("user not found", HttpStatus.UNAUTHORIZED);
+            }
+
         }else {
             return new ResponseEntity("user not found", HttpStatus.UNAUTHORIZED);
         }
