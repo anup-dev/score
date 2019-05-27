@@ -1,12 +1,16 @@
 package com.score.app.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.sql.Date;
 
 /**
  * Created by Anup on 27/5/19.
  */
 
-
+@Getter
+@Setter
 public class User {
 
     /*@Id

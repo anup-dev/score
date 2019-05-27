@@ -29,8 +29,8 @@ public class IndexRepository {
         List<Map<String,Object>> result = new LinkedList<>();
         try
         {
-            result = jdbcTemplate.queryForList("select id,venu,game_time,match_result as matchResult,match_status as matchStatus,\n" +
-                    "match_summary as matchSummary from fixture");
+            result = jdbcTemplate.queryForList("select id,team_a as teamA,team_b as teamB,venu,game_time as gameTime,match_result as matchResult,match_status as matchStatus,\n" +
+                    "match_summary as matchSummary,bet from fixture");
             dashboard.put("status","success");
             dashboard.put("value",result);
         }catch (Exception e){
